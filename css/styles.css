@@ -1,0 +1,131 @@
+/*
+  ============================================================================
+  PROPRIETÁRIO: Mauricio Spark
+  MARCA:        Spark Mauricio
+  PROJETO:      FiscalVis
+  VERSÃO:       v1.0.0
+  LINHAGEM:     SPARK
+  ============================================================================
+  Documento de Planejamento de Escopo
+  COPYRIGHT: © 2026 / Mauricio Spark. Todos os direitos reservados.
+  ============================================================================
+*/
+
+/* Animação de glow pulsante para o contador */
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: drop-shadow(0 0 25px rgba(12, 206, 21, 0.4));
+    }
+    50% {
+        opacity: 0.95;
+        transform: scale(1.01);
+        filter: drop-shadow(0 0 35px rgba(12, 206, 21, 0.6));
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Transições suaves e premium para os cards */
+.card-item {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(24, 24, 27, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(39, 39, 42, 0.8);
+}
+
+.card-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(12, 206, 21, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(12, 206, 21, 0.1);
+}
+
+/* Efeito de fade suave para filtros */
+.fade-in {
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Customização premium do scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3f3f46 0%, #27272a 100%);
+    border-radius: 5px;
+    border: 2px solid #09090b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #52525b 0%, #3f3f46 100%);
+}
+
+/* Estados dos botões de filtro - estilo pílula */
+.filtro-btn.active {
+    background: #0d9488;
+    color: #09090b;
+    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3);
+}
+
+.filtro-btn:not(.active):hover {
+    border-color: #52525b;
+    color: #fafafa;
+}
+
+/* Estados dos botões de setor - estilo pílula */
+.setor-btn.active {
+    background: #0d9488;
+    color: #09090b;
+    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3);
+}
+
+.setor-btn:not(.active):hover {
+    border-color: #52525b;
+    color: #fafafa;
+}
+
+/* Destaque premium para quantidade */
+.quantidade-destaque {
+    color: #0d9488;
+    text-shadow: 0 0 20px rgba(13, 148, 136, 0.3);
+}
+
+/* Efeito de brilho sutil no input */
+input:focus {
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+/* Animação suave para o contador ao atualizar */
+@keyframes contador-update {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.005);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.contador-update {
+    animation: contador-update 0.1s ease-out;
+}

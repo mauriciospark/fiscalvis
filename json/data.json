@@ -1,0 +1,176 @@
+{
+  "imoveis_terrenos": [
+    {
+      "id": "imv_001",
+      "nome": "Terreno Padrão 500m²",
+      "preco": 150000,
+      "classe_icone": "fa-solid fa-map-location-dot"
+    },
+    {
+      "id": "imv_002",
+      "nome": "Apartamento 2 Quartos",
+      "preco": 350000,
+      "classe_icone": "fa-solid fa-building"
+    },
+    {
+      "id": "imv_003",
+      "nome": "Apartamento 3 Quartos",
+      "preco": 550000,
+      "classe_icone": "fa-solid fa-building"
+    },
+    {
+      "id": "imv_004",
+      "nome": "Casa Térrea Padrão",
+      "preco": 450000,
+      "classe_icone": "fa-solid fa-house"
+    },
+    {
+      "id": "imv_005",
+      "nome": "Casa Alto Padrão",
+      "preco": 1200000,
+      "classe_icone": "fa-solid fa-house-chimney"
+    },
+    {
+      "id": "imv_006",
+      "nome": "Mansão de Luxo",
+      "preco": 5000000,
+      "classe_icone": "fa-solid fa-crown"
+    }
+  ],
+  "veiculos_terrestres": [
+    {
+      "id": "vtr_001",
+      "nome": "Carro Popular",
+      "preco": 65000,
+      "classe_icone": "fa-solid fa-car"
+    },
+    {
+      "id": "vtr_002",
+      "nome": "Sedan Médio",
+      "preco": 120000,
+      "classe_icone": "fa-solid fa-car-side"
+    },
+    {
+      "id": "vtr_003",
+      "nome": "SUV de Luxo",
+      "preco": 350000,
+      "classe_icone": "fa-solid fa-truck-monster"
+    },
+    {
+      "id": "vtr_004",
+      "nome": "Caminhão Leve",
+      "preco": 280000,
+      "classe_icone": "fa-solid fa-truck"
+    },
+    {
+      "id": "vtr_005",
+      "nome": "Caminhão Pesado 6x6",
+      "preco": 850000,
+      "classe_icone": "fa-solid fa-truck-front"
+    }
+  ],
+  "veiculos_aquaticos": [
+    {
+      "id": "vaq_001",
+      "nome": "Lancha 18 Pés",
+      "preco": 180000,
+      "classe_icone": "fa-solid fa-sailboat"
+    },
+    {
+      "id": "vaq_002",
+      "nome": "Lancha 24 Pés",
+      "preco": 350000,
+      "classe_icone": "fa-solid fa-ship"
+    },
+    {
+      "id": "vaq_003",
+      "nome": "Iate Médio 40 Pés",
+      "preco": 1500000,
+      "classe_icone": "fa-solid fa-water"
+    },
+    {
+      "id": "vaq_004",
+      "nome": "Iate de Luxo 60 Pés",
+      "preco": 5000000,
+      "classe_icone": "fa-solid fa-anchor"
+    },
+    {
+      "id": "vaq_005",
+      "nome": "Super Iate 100 Pés",
+      "preco": 25000000,
+      "classe_icone": "fa-solid fa-yacht"
+    }
+  ],
+  "veiculos_aereos": [
+    {
+      "id": "var_001",
+      "nome": "Helicóptero Robinson R44",
+      "preco": 550000,
+      "classe_icone": "fa-solid fa-helicopter"
+    },
+    {
+      "id": "var_002",
+      "nome": "Helicóptero Airbus H125",
+      "preco": 3500000,
+      "classe_icone": "fa-solid fa-helicopter"
+    },
+    {
+      "id": "var_003",
+      "nome": "Jato Executivo Phenom 100",
+      "preco": 12000000,
+      "classe_icone": "fa-solid fa-plane-up"
+    },
+    {
+      "id": "var_004",
+      "nome": "Jato Executivo Gulfstream G650",
+      "preco": 65000000,
+      "classe_icone": "fa-solid fa-plane"
+    },
+    {
+      "id": "var_005",
+      "nome": "Jato Privado Bombardier Global 7500",
+      "preco": 73000000,
+      "classe_icone": "fa-solid fa-jet-fighter"
+    }
+  ],
+  "infraestrutura": [
+    {
+      "id": "inf_001",
+      "nome": "Asfaltar e Concluir Toda a Transamazônica (4.000 km)",
+      "preco": 18000000000,
+      "classe_icone": "fa-solid fa-road"
+    },
+    {
+      "id": "inf_002",
+      "nome": "Aeroportos Internacionais de Grande Carga",
+      "preco": 2500000000,
+      "classe_icone": "fa-solid fa-plane-departure"
+    },
+    {
+      "id": "inf_003",
+      "nome": "Trechos de 100km de Ferrovia de Alta Carga",
+      "preco": 1200000000,
+      "classe_icone": "fa-solid fa-train"
+    },
+    {
+      "id": "inf_004",
+      "nome": "Mega Portos de Águas Profundas",
+      "preco": 5000000000,
+      "classe_icone": "fa-solid fa-ship"
+    }
+  ],
+  "complexos_industriais": [
+    {
+      "id": "cind_001",
+      "nome": "1 Complexo Antonov (Gigafábrica + Aeroporto de Carga)",
+      "preco": 15000000000,
+      "classe_icone": "fa-solid fa-industry"
+    },
+    {
+      "id": "cind_002",
+      "nome": "Rede Nacional Antonov (54 Fábricas / 2 por Estado no Brasil)",
+      "preco": 810000000000,
+      "classe_icone": "fa-solid fa-network-wired"
+    }
+  ]
+}
