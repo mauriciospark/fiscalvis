@@ -11,121 +11,341 @@
   ============================================================================
 */
 
+/* CSS Variables para melhor manutenção */
+:root {
+  --color-primary: #0d9488;
+  --color-primary-hover: #0d9488;
+  --color-primary-light: rgba(13, 148, 136, 0.3);
+  --color-primary-shadow: rgba(13, 148, 136, 0.4);
+  --color-danger: #ef4444;
+  --color-danger-shadow: rgba(239, 68, 68, 0.3);
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+  --color-amber-500: #f59e0b;
+  
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.4);
+  --shadow-primary: 0 8px 25px var(--color-primary-light);
+  --shadow-glow: 0 0 20px var(--color-primary-shadow);
+  --shadow-glow-danger: 0 0 20px var(--color-danger-shadow);
+  
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2.5rem;
+}
+
 /* Animação de glow pulsante para o contador */
 @keyframes pulse-glow {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-        filter: drop-shadow(0 0 25px rgba(12, 206, 21, 0.4));
-    }
-    50% {
-        opacity: 0.95;
-        transform: scale(1.01);
-        filter: drop-shadow(0 0 35px rgba(12, 206, 21, 0.6));
-    }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 25px var(--color-primary-shadow));
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 35px var(--color-primary-light));
+  }
 }
 
 .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
 /* Transições suaves e premium para os cards */
 .card-item {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(24, 24, 27, 0.5);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(39, 39, 42, 0.8);
+  transition: all var(--transition-normal);
+  background: rgba(24, 24, 27, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(39, 39, 42, 0.8);
 }
 
 .card-item:hover {
-    transform: translateY(-8px);
-    border-color: rgba(12, 206, 21, 0.3);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(12, 206, 21, 0.1);
+  transform: translateY(-8px);
+  border-color: var(--color-primary-light);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 30px rgba(13, 148, 136, 0.1);
 }
 
 /* Efeito de fade suave para filtros */
 .fade-in {
-    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn var(--transition-slow);
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Customização premium do scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #09090b;
+  background: var(--color-zinc-950);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #3f3f46 0%, #27272a 100%);
-    border-radius: 5px;
-    border: 2px solid #09090b;
+  background: linear-gradient(180deg, var(--color-zinc-600) 0%, var(--color-zinc-700) 100%);
+  border-radius: 5px;
+  border: 2px solid var(--color-zinc-950);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #52525b 0%, #3f3f46 100%);
+  background: linear-gradient(180deg, var(--color-zinc-500) 0%, var(--color-zinc-600) 100%);
 }
 
 /* Estados dos botões de filtro - estilo pílula */
 .filtro-btn.active {
-    background: #0d9488;
-    color: #09090b;
-    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3);
+  background: var(--color-primary);
+  color: var(--color-zinc-950);
+  box-shadow: var(--shadow-primary);
 }
 
 .filtro-btn:not(.active):hover {
-    border-color: #52525b;
-    color: #fafafa;
+  border-color: var(--color-zinc-600);
+  color: var(--color-zinc-50);
 }
 
 /* Estados dos botões de setor - estilo pílula */
 .setor-btn.active {
-    background: #0d9488;
-    color: #09090b;
-    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3);
+  background: var(--color-primary);
+  color: var(--color-zinc-950);
+  box-shadow: var(--shadow-primary);
 }
 
 .setor-btn:not(.active):hover {
-    border-color: #52525b;
-    color: #fafafa;
+  border-color: var(--color-zinc-600);
+  color: var(--color-zinc-50);
 }
 
 /* Destaque premium para quantidade */
 .quantidade-destaque {
-    color: #0d9488;
-    text-shadow: 0 0 20px rgba(13, 148, 136, 0.3);
+  color: var(--color-primary);
+  text-shadow: var(--shadow-glow);
 }
 
 /* Efeito de brilho sutil no input */
 input:focus {
-    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }
 
 /* Animação suave para o contador ao atualizar */
 @keyframes contador-update {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.005);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.005);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .contador-update {
-    animation: contador-update 0.1s ease-out;
+  animation: contador-update 0.1s ease-out;
+}
+
+/* Estilização do seletor de estado */
+#seletor-estado {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23171717'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+  padding-right: 3rem;
+}
+
+#seletor-estado:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%230d9488'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Animação de fade-in para a seção de estado */
+#secao-estado {
+  animation: fadeIn var(--transition-slow);
+}
+
+/* Estilização dos painéis de dívida e arrecadação estadual */
+#painel-divida-estado .bg-zinc-800,
+#painel-arrecadacao-estado .bg-zinc-800 {
+  transition: all var(--transition-fast);
+}
+
+/* Cor especial para dívida pública federal (vermelho) */
+#painel-divida .text-red-500 {
+  text-shadow: var(--shadow-glow-danger);
+}
+
+/* Cor especial para dívida estadual (vermelho) */
+.text-red-500 {
+  text-shadow: var(--shadow-glow-danger);
+}
+
+/* Melhorias responsivas */
+@media (max-width: 768px) {
+  /* Ajusta o tamanho dos dígitos em telas menores */
+  .placa-digito {
+    width: 8px !important;
+    height: 12px !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Ajusta o espaçamento entre dígitos */
+  .flex.gap-1 {
+    gap: 0.25rem;
+  }
+  
+  /* Ajusta o tamanho dos painéis principais */
+  section[class*="bg-zinc-900"] {
+    padding: 1.5rem !important;
+  }
+  
+  /* Ajusta o tamanho do texto das legendas */
+  .text-zinc-600.text-xs {
+    font-size: 0.6rem !important;
+  }
+  
+  /* Ajusta o tamanho dos botões */
+  .setor-btn,
+  .filtro-btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Ajusta o grid de cards */
+  #grid-bens {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Ajusta o seletor de estado */
+  #seletor-estado {
+    min-width: 100% !important;
+  }
+  
+  /* Ajusta a seção de input/filtro */
+  section[class*="flex-col"] {
+    flex-direction: column !important;
+  }
+  
+  /* Ajusta o tamanho do input */
+  input[type="text"] {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes adicionais para telas muito pequenas */
+  header img {
+    height: 3rem !important;
+  }
+  
+  .text-xl {
+    font-size: 1rem !important;
+  }
+  
+  /* Ajusta os dígitos para serem ainda menores */
+  .placa-digito {
+    width: 6px !important;
+    height: 10px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* Ajusta o espaçamento dos containers */
+  .container {
+    padding: 0.5rem !important;
+  }
+  
+  /* Ajusta os botões de pausa/retomar */
+  #btn-pausar,
+  #btn-retomar {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Suporte a modo escuro/claro do sistema */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-zinc-950: #fafafa;
+    --color-zinc-900: #f4f4f5;
+    --color-zinc-800: #e4e4e7;
+    --color-zinc-700: #d4d4d8;
+    --color-zinc-600: #a1a1aa;
+    --color-zinc-500: #71717a;
+    --color-zinc-400: #52525b;
+    --color-zinc-100: #18181b;
+    --color-zinc-50: #09090b;
+  }
+  
+  body {
+    background-color: var(--color-zinc-950);
+    color: var(--color-zinc-100);
+  }
+  
+  section[class*="bg-zinc-900"] {
+    background-color: rgba(244, 244, 245, 0.8) !important;
+  }
+  
+  div[class*="bg-zinc-800"] {
+    background-color: rgba(228, 228, 231, 0.5) !important;
+  }
+  
+  .text-zinc-100 {
+    color: var(--color-zinc-100) !important;
+  }
+  
+  .text-zinc-400 {
+    color: var(--color-zinc-600) !important;
+  }
+  
+  .text-zinc-500 {
+    color: var(--color-zinc-500) !important;
+  }
+  
+  .text-zinc-600 {
+    color: var(--color-zinc-400) !important;
+  }
+  
+  [class*="border-zinc-700"],
+  [class*="border-zinc-800"] {
+    border-color: var(--color-zinc-700) !important;
+  }
+  
+  .bg-zinc-800 {
+    background-color: var(--color-zinc-800) !important;
+  }
 }
